@@ -172,7 +172,7 @@ def load_model_weights(model, checkpoint_info, vae_file="auto"):
     if checkpoint_info not in checkpoints_loaded:
         print(f"Loading weights [{sd_model_hash}] from {checkpoint_file}")
 
-        pl_sd = torch.load(checkpoint_file, map_location=shared.weight_load_location)
+        pl_sd = torch.load(checkpoint_file)
         if "global_step" in pl_sd:
             print(f"Global Step: {pl_sd['global_step']}")
 
